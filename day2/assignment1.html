@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment1</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        div input{
+            padding: 10px;
+        }
+        input{
+            margin-bottom: 10px;
+        }
+        .container{
+            border: 2px solid black;
+            height: 300px;
+            width: 300px;
+            padding: 60px;
+            left: 50%;
+            top: 50%;
+            transform: translate(50%,50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="first">Enter the First Number</label>
+    <input type="text" id="first"><br>
+    <label for="second">Enter the Second Number</label>
+    <input type="text" id="second">
+    <div>
+        <input type="Button" placeholder="+" value="+" onclick="add()">
+        <input type="Button" placeholder="-" value="-" onclick="sub()">
+        <input type="Button" placeholder="*" value="*" onclick="mul()">
+        <input type="Button" placeholder="/" value="/" onclick="div()">
+        <input type="Button" placeholder="^" value="^" onclick="xor()">
+    </div>
+    <p id="result">
+    </p>
+    </div>
+</body>
+<script>
+    
+    function add(){
+        let first=Number(document.getElementById("first").value)
+        let second=Number(document.getElementById("second").value)
+        let p=document.getElementById("result")
+        console.log(first)
+            p.innerHTML=""
+            p.innerHTML=`${first+second}`
+        }
+    function sub(){
+        let first=Number(document.getElementById("first").value)
+        let second=Number(document.getElementById("second").value)
+        let p=document.getElementById("result")
+        console.log(first)
+            p.innerHTML=""
+            p.innerHTML=`${first-second}`
+        }
+    function mul(){
+        let first=Number(document.getElementById("first").value)
+        let second=Number(document.getElementById("second").value)
+        let p=document.getElementById("result")
+        console.log(first)
+            p.innerHTML=""
+            p.innerHTML=`${first*second}`
+        }
+    function div(){
+        let first=Number(document.getElementById("first").value)
+        let second=Number(document.getElementById("second").value)
+        let p=document.getElementById("result")
+        console.log(first)
+            p.innerHTML=""
+            p.innerHTML=`${first/second}`
+        }
+    function xor(){
+        let first=Number(document.getElementById("first").value)
+        let second=Number(document.getElementById("second").value)
+        let p=document.getElementById("result")
+        console.log(first)
+            p.innerHTML=""
+            p.innerHTML=`${first^second}`
+        }
+    
+</script>
+</html>

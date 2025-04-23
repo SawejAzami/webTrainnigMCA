@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 1</title>
+</head>
+<body>
+    <div class="container">
+        <label for="input">Enter the number</label>
+        <input type="text" id="input">
+        <input type="Button" value="click" onclick="printTable()">
+        <p id="para">
+
+        </p>
+    </div>
+</body>
+<script>
+    function printTable(){
+        let val=document.getElementById("input").value;
+        let para=document.getElementById("para");
+        para.innerHTML="";
+        for(let i=1;i<=10;i++){
+            para.innerHTML +=`<div> ${val} X ${i}= ${i*val}</div> `
+        }
+    }
+</script>
+</html>
