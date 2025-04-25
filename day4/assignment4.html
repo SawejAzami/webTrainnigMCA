@@ -1,36 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>id generate</title>
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        .container{
-            /* background-color: gray; */
-            border: 1px solid black;
-            height: 400px;
-            width: 300px;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #container {
+        /* background-color: gray; */
+        display: none;
+        border: 1px solid black;
+        height: 400px;
+        width: 300px;
+        padding: 10px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .college {
+        text-align: center;
+      }
+      .img img {
+        height: 120px;
+        width: 120px;
+        border-radius: 5px;
+      }
+      .img{
+        margin-top: 5px;
+        display: flex;
+        justify-content: center;
+      }
+      .name{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .line{
+        width: 150px;
+        border-bottom: 3px solid black;
+      }
+      ul{
+        list-style: none;
+        margin: 10px;
+        font-weight: 600;
+        font-size: 14px;
+      }
+      li{
+        margin-bottom: 5px;
+      }
+      /* details */
+       fieldset{
+        /* display: none; */
+            width: 400px;
+            background-color: aquamarine;
             position: absolute;
             left: 50%;
             top: 50%;
             transform: translate(-50%,-50%);
-
+            padding: 20px;
         }
-
-
+        fieldset div{
+            margin-top: 10px;
+        }
+        input{
+            border: none;
+            outline: none;
+            padding: 4px;
+            border-radius: 5px;
+        }
+        #submit{
+            padding: 8px;
+            font-weight: 600;
+            font-size: 20px;
+            float: right;
+        }
     </style>
-</head>
-<body>
-        <div class="container">
-            <div class="college">
-                <h1>ABES</h1>
-                <p>Engineering College </p>
+  </head>
+  <body>
+
+
+     <fieldset id="fieldset">
+        <legend>Enter Details</legend>
+        <form id="form" action="./assignment4.html">
+            <div>
+                <label for="image">Enter Image:</label>
+            <input type="file" placeholder="Inset-image" id="image">
             </div>
-        </div>
-</body>
+            <div>
+                <label for="nameInput">Enter Your Name</label>
+            <input type="text" placeholder="Name" id="nameInput">
+            </div>
+           <div>
+             <label for="branch">Enter Branch</label>
+            <input type="text" placeholder="Branch" id="branch">
+           </div>
+           <div>
+             <label for="addmission">Enter Addmission No</label>
+            <input type="text" placeholder="Addmission No" id="addmission">
+           </div>
+           <div>
+             <label for="dob">Enter DOB</label>
+            <input type="text" placeholder="DOB" id="dob">
+           </div>
+           <div>
+             <label for="blood">Enter Blood Group</label>
+            <input type="text" placeholder="BloodGroup" id="blood">
+           </div>
+           <div>
+             <label for="hostle">Enter Hostel</label>
+            <input type="text" placeholder="Yes or No" id="hostle">
+           </div>
+           <div>
+             <label for="date">Enter Valid Till</label>
+            <input type="text" placeholder="Validity" id="date">
+           </div>
+           <div class="submit">
+            <input type="submit" value="submit" id="submit">
+           </div>
+        </form>
+    </fieldset>
+
+<!-- second Part -->
+
+    <div id="container">
+    <!-- college -->
+      <div class="college">
+        <h1>ABES</h1>
+        <p>Engineering College</p>
+      </div>
+<!-- image -->
+    <div class="img">
+        <img src="../img/google.jpeg" alt="" />
+    </div>
+
+    <!-- name -->
+     <div class="name">
+        <h3 id="name_input">Azami Sawej Shereaslam</h3>
+        <p id="name_branch">MCA</p>
+        <p class="line"></p>
+     </div>
+     <!-- details -->
+     <div class="detail">
+      <ul>
+        <li id="detail_addmission">ADDMISSION NO:</li>
+        <li id="detail_dob">DOB:</li>
+        <li id="detail_blood">BLOOD GROUP:</li>
+        <li id="detail_hostle">HOSTEL:</li>
+        <li id="detail_validity">VALID TILL:</li>
+      </ul>
+     </div>
+      </div>
+  </body>
+  <script>
+    let form=document.getElementById("form")
+    form.addEventListener('submit',(e)=>{
+      e.preventDefault();
+      let name=document.getElementById("nameInput").value;
+      let branch=document.getElementById("branch").value;
+      let addmission=document.getElementById("addmission").value;
+      let dob=document.getElementById("dob").value;
+      let blood=document.getElementById("blood").value;
+      let hostle=document.getElementById("hostle").value;
+      let date=document.getElementById("date").value;
+
+      // value assigned
+      document.getElementById("name_input").innerText=name;
+      document.getElementById("name_branch").innerText=branch;
+      document.getElementById("detail_addmission").innerText+=addmission
+      document.getElementById("detail_dob").innerText+=dob;
+      document.getElementById("detail_blood").innerText+=blood;
+      document.getElementById("detail_hostle").innerText+=hostle;
+      document.getElementById("detail_validity").innerText+=date;
+
+
+
+      // display
+      let container=document.getElementById("container")
+      container.style.display="block"
+      let fieldset=document.getElementById("fieldset")
+      fieldset.style.display="none"
+      console.log(container)
+    })
+  </script>
 </html>

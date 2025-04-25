@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        fieldset{
+            width: 400px;
+            background-color: aquamarine;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            padding: 20px;
+        }
+        fieldset div{
+            margin-top: 10px;
+        }
+        input{
+            border: none;
+            outline: none;
+            padding: 4px;
+            border-radius: 5px;
+        }
+        #submit{
+            padding: 8px;
+            font-weight: 600;
+            font-size: 20px;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>Enter Details</legend>
+        <form action="./assignment4.html">
+            <div>
+                <label for="image">Enter Image:</label>
+            <input type="file" placeholder="Inset-image" id="image">
+            </div>
+            <div>
+                <label for="nameInput">Enter Your Name</label>
+            <input type="text" placeholder="Name" id="nameInput">
+            </div>
+           <div>
+             <label for="Branch">Enter Branch</label>
+            <input type="text" placeholder="Branch" id="Branch">
+           </div>
+           <div>
+             <label for="addmission">Enter Addmission No</label>
+            <input type="text" placeholder="Addmission No" id="addmission">
+           </div>
+           <div>
+             <label for="dob">Enter DOB</label>
+            <input type="text" placeholder="DOB" id="dob">
+           </div>
+           <div>
+             <label for="blood">Enter Blood Group</label>
+            <input type="text" placeholder="BloodGroup" id="blood">
+           </div>
+           <div>
+             <label for="hostle">Enter Hostel</label>
+            <input type="text" placeholder="Yes or No" id="hostle">
+           </div>
+           <div>
+             <label for="date">Enter Valid Till</label>
+            <input type="text" placeholder="date" id="date">
+           </div>
+           <div class="submit">
+            <input type="submit" value="submit" id="submit">
+           </div>
+        </form>
+    </fieldset>
+</body>
+</html>
