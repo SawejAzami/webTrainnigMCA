@@ -1,20 +1,36 @@
-// console.log("5" + 2 + 3);
-// console.log(2 + 3 + "4");
-// console.log("2"-4)
-// console.log("2"*4)
-// console.log("8"/4)
-// console.log("8"-"4")
-// console.log(9/0)
-// console.log(0/0)
-// console.log("asdasd"-232)
-// console.log('A'+2)
-// console.log('A'-2)
-// console.log("5"==5)
-// console.log("5"===5)
+// ******** function with no argument
+// function hello(){
+//     console.log("hello MCA")
+// }
+// hello()
 
-var a=[1,2,3,4,5,7,8,9];
-for(var i=0;i<a.length;i++){
-    setTimeout(()=>{
-        console.log(a[i]);
-    },2000)
-}
+// ******** function with argument
+// function text(x,y){
+//     return x+y
+// }
+// console.log(text(2, 3));
+
+// ******** function with default value
+// function fun( x, y=8){
+//     let z=x+y
+//     return z;
+// }
+// console.log(fun(10));
+
+// *********** function as variable
+// let t=function text(x,y){
+//     return (x+y)
+// }
+// console.log(t(10,20))
+
+// **** anonymous function
+// let fun2=function(){
+//     console.log("hello");
+// }
+// fun2()
+
+// ****** Arrow function
+// let a=()=>{
+//     console.log("Arrow function")
+// }
+// a()
