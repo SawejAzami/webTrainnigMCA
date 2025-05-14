@@ -65,6 +65,11 @@
             transform: translate(-50%,-50%);
             padding: 20px;
         }
+        div label{
+           display: inline-block;
+            width: 150px;
+           
+        }
         fieldset div{
             margin-top: 10px;
         }
@@ -136,7 +141,8 @@
       </div>
 <!-- image -->
     <div class="img">
-        <img src="../img/google.jpeg" alt="" />
+        <!-- <img src="../img/google.jpeg" alt="" /> -->
+        <img src="" alt="" id="imageDisplay"/>
     </div>
 
     <!-- name -->
@@ -168,6 +174,7 @@
       let blood=document.getElementById("blood").value;
       let hostle=document.getElementById("hostle").value;
       let date=document.getElementById("date").value;
+      let image=document.getElementById("image");
 
       // value assigned
       document.getElementById("name_input").innerText=name;
@@ -177,7 +184,18 @@
       document.getElementById("detail_blood").innerText+=blood;
       document.getElementById("detail_hostle").innerText+=hostle;
       document.getElementById("detail_validity").innerText+=date;
-
+      let imageDisplay=document.getElementById("imageDisplay")
+      
+      const file = image.files[0];
+      // console.log(file)
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            imageDisplay.src = e.target.result;
+            imageDisplay.style.display = 'block'; // make it visible
+        };
+        reader.readAsDataURL(file); // convert to base64 and display
+    }
 
 
       // display
@@ -185,7 +203,7 @@
       container.style.display="block"
       let fieldset=document.getElementById("fieldset")
       fieldset.style.display="none"
-      console.log(container)
+      // console.log(container)
     })
   </script>
 </html>

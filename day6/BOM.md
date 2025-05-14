@@ -1,0 +1,1 @@
+create a page that contain image and it should be rotate on clicking

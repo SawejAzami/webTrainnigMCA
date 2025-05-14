@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Scroller</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        .container{
+            background-color: antiquewhite;
+            height: 350px;
+            margin: 30px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        img{
+            background-color: red;
+            height: 200px;
+            width: 200px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+        .button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px 30px;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="../img/pexels-photo-31779671.webp" alt id="img1">
+        <img src="../img/istockphoto-649356542-612x612.jpg" alt="" id="img2">
+        <img src="../img/istockphoto-547436912-612x612.jpg"alt="" id="img3">
+        <img src="../img/istockphoto-532189860-612x612.jpg" alt="" id="img4">
+    </div>
+    <div class="button">
+        <button onclick="prev()">Prev</button>
+        <button onclick="next()">Next</button>
+    </div>
+</body>
+<script>
+    let img=[
+        "../img/pexels-photo-31779671.webp" ,
+        "../img/istockphoto-649356542-612x612.jpg",
+        "../img/istockphoto-547436912-612x612.jpg",
+        "../img/istockphoto-532189860-612x612.jpg" ,
+        "../img/istockphoto-524009318-612x612.jpg" ,
+        "../img/istockphoto-1490908827-612x612.jpg",
+        "../img/google.jpeg" ,
+        "../img/free-photo-of-camel-walking-in-the-desert-of-wadi-rum-jordan.jpeg" ,
+        "../img/free-photo-of-charming-old-town-marbella-street-view.jpeg",
+        "../img/free-photo-of-historic-cappadocia-cave-dwellings-landscape.jpeg",
+        "../img/free-photo-of-rustic-wooden-cabin-in-lush-green-forest.jpeg",
+        "../img/free-photo-of-scenic-forest-path-in-scottish-cairngorms.jpeg",
+        "../img/free-photo-of-scenic-mountain-landscape-in-french-alps.jpeg",
+        "../img/free-photo-of-scenic-tropical-beach-with-palm-tree-in-maldives.jpeg" ,
+]
+    let index=0;
+    let img1=document.getElementById("img1")
+    let img2=document.getElementById("img2")
+    let img3=document.getElementById("img3")
+    let img4=document.getElementById("img4")
+
+    let len=img.length;
+    console.log(len)
+   
+    function update(index){
+        img1.src=img[index+1];
+        img2.src=img[index+2];
+        img3.src=img[index+3];
+        img4.src=img[index+4];
+        
+    }
+    function prev(){
+        if(index>=0){
+            index--;
+        update(index)
+        }
+    }
+    function next(){
+        if(index<len-5){
+            index++;
+            console.log(index)
+        update(index)
+        }
+    }
+
+
+</script>
+</html>

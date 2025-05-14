@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mark sheet</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        #Marksheet{
+            display: none;
+            position: absolute;
+            background-color: rgb(19, 200, 249);
+            height: 80%;
+            width: 80%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .schoolName{
+            text-align: center;
+        }
+        .studentDetail{
+            font-size: large;
+            display: flex;
+            justify-content: space-around;
+            margin: 10px;
+        }
+        table{
+            display: flex;
+            justify-content: center;
+            margin: 10px;
+        }
+        .result{
+            margin: 20px;
+            display: flex;
+            justify-content: space-around;
+
+        }
+        table th,td{
+            padding: 5px 30px;
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        /* input details */
+
+        fieldset{
+            width: 400px;
+            background-color: aquamarine;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            padding: 20px;
+        }
+        div label{
+           display: inline-block;
+            width: 150px;
+           
+        }
+        fieldset div{
+            margin-top: 10px;
+        }
+        input{
+            border: none;
+            outline: none;
+            padding: 4px;
+            border-radius: 5px;
+            width: 150px;
+        }
+        #submit{
+            padding: 8px;
+            font-weight: 600;
+            font-size: 20px;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+
+     <fieldset id="field">
+        <legend>Enter Details</legend>
+        <form >
+           
+            <div>
+                <label for="name">Enter Your Name</label>
+            <input type="text" placeholder="Name" id="name">
+            </div>
+           <div>
+             <label for="class">Enter Class</label>
+            <input type="text" placeholder="Class" id="class">
+           </div>
+           <div>
+             <label for="rollno">Enter Roll No</label>
+            <input type="text" placeholder="Roll No" id="rollno">
+           </div>
+           <div>Enter your marks</div>
+           <div>
+             <label for="web">Web Tech</label>
+            <input type="number" 
+            min="1" max="100"
+            placeholder="" id="web">
+           </div>
+           <div>
+             <label for="dsa">DSA</label>
+            <input type="number" 
+            min="1" max="100"
+            placeholder="" id="dsa">
+           </div>
+           <div>
+             <label for="oops">OOPs</label>
+            <input type="number"
+            min="1" max="100" placeholder="" id="oops">
+           </div>
+           <div>
+             <label for="os">OS</label>
+            <input type="number" 
+            min="1" max="100"
+            placeholder="" id="os">
+           </div>
+           <div>
+             <label for="dbms">DBMS</label>
+            <input type="number" 
+            min="1" max="100"
+            placeholder="" id="dbms">
+           </div>
+           <div class="submit">
+            <input type="submit" value="submit" id="submit">
+           </div>
+        </form>
+    </fieldset>
+
+
+
+
+
+    <!-- marksheet -->
+    <div id="Marksheet">
+        <h1 class="schoolName">
+            ABES Engineering College
+        </h1>
+        <div class="studentDetail">
+            <div id="nameDisplay">Name:</div>
+            <div id="rollNoDisplay">Roll-No:</div>
+            <div id="classDisplay">Class:</div>
+        </div>
+        <table >
+            <tr>
+                <th>Subject</th>
+                <th>Total Marks</th>
+                <th>Marks Obtained</th>
+                <th>Grade</th>
+            </tr>
+            <tr>
+                <th>Web Tech</th>
+                <td>100</td>
+                <td id="webMarks">80</td>
+                <td>A</td>
+            </tr>
+            <tr>
+                <th>DSA</th>
+                <td>100</td>
+                <td id="dsaMarks">80</td>
+                <td>A</td>
+            </tr>
+            <tr>
+                <th>OOPs</th>
+                <td>100</td>
+                <td id="oopsMarks">80</td>
+                <td>A</td>
+            </tr>
+            <tr>
+                <th>OS</th>
+                <td>100</td>
+                <td id="osMarks">80</td>
+                <td>A</td>
+            </tr>
+            <tr>
+                <th>DBMS</th>
+                <td>100</td>
+                <td id="dbmsMarks">80</td>
+                <td>A</td>
+            </tr>
+            <tr>
+                <th>Total</th>
+                <td id="totalMarks">500</td>
+                <td id="showTotal"></td>
+                <td></td>
+            </tr>
+        </table>
+        <div class="result">
+            <div id="percentage">Percentage:</div>
+            <div id="passOrFail">Result:</div>
+        </div>
+    </div>
+    <script>
+        let form=document.querySelector("form");
+       form.addEventListener('submit',(e)=>{
+        e.preventDefault()
+        // taking input from form
+         let name=document.getElementById("name").value;
+        let className=document.getElementById("class").value;
+        let rollno=document.getElementById("rollno").value;
+        let web=document.getElementById("web").value;
+        let oops=document.getElementById("oops").value;
+        let dsa=document.getElementById("dsa").value;
+        let os=document.getElementById("os").value;
+        let dbms=document.getElementById("dbms").value;
+
+        // set the value
+        document.getElementById("nameDisplay").innerText+=name;
+        document.getElementById("rollNoDisplay").innerText+=rollno;
+        document.getElementById("classDisplay").innerText+=className;
+        document.getElementById("webMarks").innerText=web;
+        document.getElementById("dsaMarks").innerText=dsa;
+        document.getElementById("oopsMarks").innerText=oops;
+        document.getElementById("osMarks").innerText=os;
+        document.getElementById("dbmsMarks").innerText=dbms;
+
+        // calculate percentage
+        let totalMarks=(parseInt(web)+parseInt(dsa)+parseInt(oops)+parseInt(os)+parseInt(dbms))||0
+        // console.log(totalMarks)
+        document.getElementById("percentage").innerText+=(totalMarks/5)+"%";
+        document.getElementById("showTotal").innerText=totalMarks;
+
+        if(totalMarks>=175){
+            document.getElementById("passOrFail").innerText+="Pass"
+        }
+        else{
+            document.getElementById("passOrFail").innerText+="Fail"
+        }
+        
+        // form and marksheet display
+        document.getElementById("field").style.display="none";
+        document.getElementById("Marksheet").style.display="block";
+
+       })
+    </script>
+</body>
+</html>
